@@ -25,6 +25,10 @@ public final class OverworldTwoConfig {
     @SerializedName("generate_nether")
     public boolean generateNether = true;
 
+    // TODO: Probably would fare better as a per-world config rather than a global config.
+    @SerializedName("tall_nether")
+    public boolean tallNether = false;
+
     public static OverworldTwoConfig get() {
         if (config == null) {
             try {

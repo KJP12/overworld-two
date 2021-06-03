@@ -9,6 +9,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.HashCommon;
 import net.gegy1000.overworldtwo.OverworldTwo;
+import net.gegy1000.overworldtwo.config.OverworldTwoConfig;
 import net.gegy1000.overworldtwo.noise.Noise;
 import net.gegy1000.overworldtwo.noise.NoiseFactory;
 import net.gegy1000.overworldtwo.noise.NormalizedNoise;
@@ -160,7 +161,7 @@ public class OverworldTwoChunkGenerator extends NoiseChunkGenerator {
         // Vanilla: 1.0, 3.0, 80.0, 60.0
         NoiseSamplingConfig noiseSampler = new NoiseSamplingConfig(48.0, 18.0, 120.0, 40.0);
         GenerationShapeConfig noise = new GenerationShapeConfig(
-                128,
+                OverworldTwoConfig.get().tallNether ? 256 : 128,
                 noiseSampler,
                 new SlideConfig(120, 3, 0),
                 new SlideConfig(320, 4, -1),
